@@ -1,0 +1,7 @@
+ErrorDocument 404 http://in-compassarts.co.uk/404
+ErrorDocument 403 http://in-compassarts.co.uk/404
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !www\.in-compassarts.\.(.*)$ [NC]
+RewriteCond %{HTTP_HOST} ^(www.)?([a-z0-9-]+)\.in-compassarts\.(.*)$ [NC] 
+RewriteRule ^([a-z0-9\-]+)$ index.php?page=$1&subdomain=%2 [L]
+RewriteRule ^([a-z0-9\-]+)$ index.php?page=$1 [L]
